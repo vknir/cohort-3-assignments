@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+
+
+<script>
+    const config={
+            headers:{
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }};
+
+    async function signup()
+    {
+        const username= document.getElementById('signup-username').value;
+        const password= document.getElementById('signup-password').value;
+
+        
+
+        const response = await axios.post('http://localhost:3000/signup', {
+            username:username,
+            password:password
+        },
+        config
+        );
+
+        alert('Signed up')
+    }
+
+
+    async function login()
+    {
+        const username= document.getElementById('login-username').value;
+        const password= document.getElementById('login-password').value;
+
+        const response = await axios.post('http://localhost:3000/login', {
+            username:username,
+            password:password
+        }, config);
+        
+        localStorage.setItem("token",response.data.token)
+        
+    }
+
+    async function displayList() {
+
+        const token = localStorage.getItem("token");
+
+        const  response = await axios.get("http://localhost:3000/display",{
+            headers:{
+                token:token
+            }
+        });
+
+        const todos= response.data.todos;
+        document.getElementById('user-information').innerHTML=response.data.username
+
+        for(let i=0;i< todos.length;i++)
+        {
+            const para= document.createElement('p');
+            para.innerHTML=todos[i].task
+            document.getElementById("display-todos").appendChild(para);
+        }
+
+    }
+
+    async function addTodo(){
+        const token = localStorage.getItem("token");
+        const task= document.getElementById("todo-input").value;
+
+        const newTodo={
+            task: task,
+            doone:false
+        }
+
+        
+        const response =await axios.post("http://localhost:3000/addItem",
+            newTodo, {
+                headers:{
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    token:token
+                }
+            });
+        
+        console.log(response);
+        alert("new task added!");
+    }
+</script>
+<body>
+    <div>
+        <p>Signup</p>
+        <input type="text" id="signup-username">
+        <input type="password" id="signup-password">
+        <button onclick="signup()">Signup</button>
+    </div>
+
+
+        
+    <div>
+        <p>Login</p>
+        <input type="text" id="login-username">
+        <input type="password" id="login-password">
+        <button onclick="login()" >Login</button>
+    </div>
+
+    <div>
+        <button onclick="displayList()">display List</button>
+        <p>To Do List</p>
+        <div id="user-information"></div>
+        <div id="display-todos"></div>
+        <input id="todo-input" type="text"> 
+        <button onclick="addTodo()">Add Todo</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+/** CSS Resets by https://www.joshwcomeau.com/css/custom-css-reset/ **/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+
+/** Reset Over **/
+
+:root{
+    --gray : #9ba3b4;
+    --white : #ffffff;   
+    --blue: #0078d4;
+    /* --light-gray: #242424; */
+}
+
+body{
+    background-color: #0e0e0e;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+
+/* nav bar styling */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    background-color: #0e0e0e; 
+    padding: 0 5%;
+    min-height: 3.75rem;
+    color: var(--gray);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    border-bottom: .5px solid var(--gray);
+}
+
+.nav-left{
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    gap : 20px;
+    /* background-color: aqua; */
+    
+}
+
+.nav-left .logo{
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-left .logo img{
+    height: 30px;
+    width: 30px;
+}
+
+nav .nav-left ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+nav .nav-left ul a{
+    text-decoration: none;
+    color: var(--gray);
+}
+  
+/** styling navbar right side **/
+
+.nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aquamarine; */
+    gap : 10px;
+    
+}
+.icon{
+    height: 20px;
+    width: 20px;
+    
+}
+
+.nav-right .input-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    border: 1px solid var(--gray);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.nav-right .input-box input{
+    border: 0;
+    font-size: 1rem;
+    width: 10rem;
+    outline :0px;
+    background-color: #0e0e0e;
+}
+
+.nav-right button{
+    background-color: var(--blue);
+    padding: 5px 10px;
+    color: var(--white);
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 0px;
+}
+
+/* styling version */
+
+.version{
+    margin-top: 5rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--gray);
+    position: relative;
+}
+
+.version a{
+    color: var(--blue);
+}
+
+.version button{
+    background-color: #0e0e0e;
+    border: 0;
+    position: absolute;
+    top : 0;
+    right: 5%;
+}
+
+/* styling content*/
+
+.content{
+    margin-top: 3rem;
+    
+    height: 100vh;
+}
+
+/* styling section1 of content */ 
+.content .section1{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    padding: 0 5% 5rem;
+    border-bottom: 1px solid #9ba3b4;
+}
+
+/* styling left part of section1 */
+.section1 .section1-left{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
+
+.section1 .section1-left h1{
+    font-size: 3rem;
+}
+
+.section1 .section1-left span{
+    background-color: rgb(24, 24, 24);
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    color: var(--gray);
+    border: 1px solid var(--gray);
+    max-width: fit-content;
+}
+
+.section1 .section1-left button{
+    background-color: var(--blue);
+    padding: 1rem ;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 0px;
+    max-width: fit-content;
+}
+
+
+

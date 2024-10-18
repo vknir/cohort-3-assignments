@@ -1,0 +1,44 @@
+<body>
+    <input type="text"></input>
+    <button onclick="addTodo()">Add todo!</button>
+    <div id="todo"></div>
+    <script>
+      let todos = [];
+      function addTodo() {
+        todos.push({
+          title: document.querySelector("input").value
+        })
+        render();
+      }
+  
+      function deleteTodo() {
+        
+        render();
+      }
+   
+      function createComplexElement(title) {
+        
+        const divEl= document.createElement("div")
+        const h2El= document.createElement("h2");
+        h2El.innerHTML=title
+        const buttonEl =document.createElement("button")
+        buttonEl.innerHTML="Delete" 
+
+        divEl.appendChild(h2El)
+        divEl.appendChild(buttonEl)
+         
+        return divEl;
+      }
+
+      function render()
+      {
+        document.getElementById("todo").innerHTML="";
+        for(let i=0;i< todos.length;i++)
+      {
+        const complexElement=createComplexElement(todos[i].title);
+        document.getElementById("todo").appendChild(complexElement);
+
+      }
+      }
+    </script>
+  </body>

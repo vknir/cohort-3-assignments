@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-block: 10%;
+}

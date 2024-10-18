@@ -1,0 +1,77 @@
+<html>
+    <title>mein Chutiya hun</title>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+
+           async function getUserInfo() {
+            
+           const resposne= await axios.get('http://localhost:3000/me',
+            {
+                headers:{
+                    token: localStorage.getItem("token")
+                }
+            })
+
+            console.log(resposne);
+
+           }
+
+            async function signup(){
+                const name=document.getElementById("signup-name").value;
+                const password =document.getElementById("signup-password").value;
+
+                await axios.post('http://localhost:3000/sign-up',
+                {
+                    username:name,
+                    password:password
+                })
+
+                alert('You are signed up!');
+            }
+
+            async function login()
+            {
+                const username=document.getElementById('login-name').value;
+                const  password=document.getElementById("login-password").value;
+
+                const  resposne= await axios.post('http://localhost:3000/login',{
+                    username:username,
+                    password:password
+                })
+
+                localStorage.setItem("token", resposne.data.token);
+               
+
+
+                getUserInfo();
+                alert("Signed in successfully");
+            }
+
+            function logout()
+            {
+                localStorage.removeItem('token');
+            }
+            
+
+
+        </script>
+        <main>
+            <div class="signup">
+                <input id="signup-name" type="text" >
+                <input id="signup-password" type="password">
+                <button onclick="signup()">Signup</button>
+            </div>
+
+            <div class="login">
+                <input id="login-name" type="text" >
+                <input id="login-password" type="password">
+                <button onclick="login()">Login</button>
+            </div>
+
+            <div class="user-info">
+                
+            </div>
+        </main>
+    </body>
+</html>
