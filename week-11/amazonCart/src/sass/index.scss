@@ -1,0 +1,55 @@
+@use "reset";
+@use "variables";
+
+body {
+  font-family: sans-serif;
+  background-color: variables.$clr-background;
+}
+
+#root {
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-inline: 20px;
+    padding-block: 10px;
+
+    background-color: variables.$clr-nav-background;
+
+    color: white;
+    font-size: variables.$fs-normal;
+
+    margin-bottom: 30px;
+
+    img {
+      height: 20px;
+    }
+
+    .left-section {
+      font-weight: variables.$fw-bold;
+      font-size: variables.$fs-heading;
+    }
+
+    .right-section {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-inline: 20px;
+
+    .cart{
+        background-color: variables.$clr-card-background;
+    }
+
+    .summary{
+        background-color: variables.$clr-card-background;
+    }
+  }
+}
