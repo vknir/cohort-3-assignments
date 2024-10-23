@@ -54,6 +54,7 @@ p, h1, h2, h3, h4, h5, h6 {
 body {
   font-family: sans-serif;
   background-color: #F3F4F6;
+  font-size: 1rem;
 }
 
 #root nav {
@@ -83,13 +84,87 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding-inline: 20px;
 }
 #root main .cart {
   background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 650px;
+}
+#root main .cart > p {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+#root main .cart .cart__items-wrapper .item {
+  display: flex;
+  border-bottom: 1px solid black;
+  font-weight: 700;
+  gap: 1rem;
+  margin-block: 10px;
+  padding-bottom: 10px;
+}
+#root main .cart .cart__items-wrapper .item .item__display-img {
+  height: 100px;
+  width: 100px;
+  background-color: buttonface;
+}
+#root main .cart .cart__items-wrapper .item .item__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+#root main .cart .cart__items-wrapper .item .item__details .item__details__spread {
+  display: flex;
+  justify-content: space-between;
+}
+#root main .cart .cart__items-wrapper .item .item__details .item__details__spread span {
+  color: #2DA956;
+}
+#root main .cart .cart__items-wrapper .item .item__details .item__button-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+#root main .cart .cart__items-wrapper .item .item__details .item__button-wrapper button {
+  border: none;
+  padding: 0px;
+  font-weight: 400;
+  height: 30px;
+  width: 30px;
+}
+#root main .cart .cart__items-wrapper .item .item__details .item__button-wrapper button:hover {
+  border: 2px solid #316CEC;
+}
+#root main .cart .cart__items-wrapper .item .item__details .item__button-wrapper .delete {
+  color: #316CEC;
 }
 #root main .summary {
+  padding: 20px;
   background-color: #FFFFFF;
+  border-radius: 10px;
+  font-weight: 700;
+  width: 30%;
+  min-width: 200px;
+}
+#root main .summary .summary__final {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: 1rem;
+}
+#root main .summary button {
+  border: none;
+  background: #FACC14;
+  font-weight: 400;
+  width: 100%;
+  padding-block: 5px;
+}
+#root main .summary button:hover {
+  border: 2px solid #316CEC;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -61,7 +61,7 @@ function Cart()
 
     const  items= cart.map((item, index)=>{
 
-        return <Item key={index} removeItem={ ()=> removeItem(index)} decreaseQuant={ ()=> decreaseQuant(index, item.quantity)} increaseQuant={()=>increaseQuant(index, item.quantity) } quantity={item.quantity} title={item.title} status={item.status}/>
+        return <Item key={index} removeItem={ ()=> removeItem(index)} decreaseQuant={ ()=> decreaseQuant(index, item.quantity)} increaseQuant={()=>increaseQuant(index, item.quantity) } quantity={item.quantity} price={item.price} title={item.title} status={item.status}/>
     } )
 
     return<div className="cart">

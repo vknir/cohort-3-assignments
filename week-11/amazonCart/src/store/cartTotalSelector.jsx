@@ -13,8 +13,8 @@ const cartTotalSelector = selector({
             count+=item.quantity
             price+=(item.price * item.quantity)
         })
-
-
+        price = price.toFixed(2);
+        
         return {count,price}
     }
 })

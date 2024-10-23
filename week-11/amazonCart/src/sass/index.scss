@@ -4,6 +4,7 @@
 body {
   font-family: sans-serif;
   background-color: variables.$clr-background;
+  font-size: variables.$fs-normal;
 }
 
 #root {
@@ -42,14 +43,115 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding-inline: 20px;
 
-    .cart{
-        background-color: variables.$clr-card-background;
+    .cart {
+      background-color: variables.$clr-card-background;
+      display: flex;
+      flex-direction: column;
+
+      padding: 20px;
+
+      border-radius: variables.$border-radius;
+      width: 60%;
+      max-width: 650px;
+
+      > p {
+        font-size: variables.$fs-heading;
+        font-weight: variables.$fw-bold;
+      }
+
+      .cart__items-wrapper {
+        .item {
+          display: flex;
+          border-bottom: 1px solid black;
+
+          font-weight: variables.$fw-bold;
+          gap: 1rem;
+
+          margin-block: 10px;
+          padding-bottom: 10px;
+
+          .item__display-img {
+            height: 100px;
+            width: 100px;
+            background-color: buttonface;
+          }
+
+          .item__details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            width: 100%;
+
+            .item__details__spread {
+              display: flex;
+              justify-content: space-between;
+
+              span {
+                color: variables.$clr-success;
+              }
+            }
+
+            .item__button-wrapper{
+                display: flex;
+                gap:1rem;
+
+                align-items: center;
+
+                button{
+                  border: none;
+                  padding: 0px;
+
+                  font-weight: 400;
+
+                  height: 30px;
+                  width: 30px;
+                }
+
+                button:hover{
+                  border: 2px solid variables.$clr-primary;
+                }
+
+                .delete{
+                  color: variables.$clr-primary;
+                }
+            }
+          }
+        }
+      }
     }
 
-    .summary{
-        background-color: variables.$clr-card-background;
+    .summary {
+      padding: 20px;
+      background-color: variables.$clr-card-background;
+
+      border-radius: variables.$border-radius;
+      font-weight: variables.$fw-bold;
+
+      .summary__final{
+        display: flex;
+        align-items: center;
+
+        justify-content: space-between;
+
+        margin-block: 1rem;
+      }
+
+      button{
+        border: none;
+        background: variables.$clr-checkout;
+        font-weight: 400;
+        width: 100%;
+        padding-block: 5px;
+      }
+
+      button:hover{
+        border: 2px solid variables.$clr-primary;
+      }
+      
+      width: 30%;
+      min-width: 200px;
     }
   }
 }

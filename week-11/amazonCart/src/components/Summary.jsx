@@ -10,7 +10,7 @@ function Summary()
         <h2>Order Summary</h2>
         <div className="summary__final">
             <p>Order Total {result.count}</p>
-            <p>{result.price}</p>
+            <p> ₹{result.price}</p>
         </div>
         <button>Proceed to Buy</button>
     </div>
